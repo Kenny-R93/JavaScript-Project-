@@ -113,3 +113,23 @@ button:hover {
 .post-tags a:hover {
   background-color: #2980b9;
 }
+
+
+/* --------------------KL STYLE ADDED----------- */
+body {
+  background-image: url(images/BG.jpeg)
+}
+
+.row1 {
+  background-image: url(images/cover.jpg);
+  background-size: cover;
+}
+
+.btn{
+  background-color:  rgb(77, 111, 137);
+  color: #fff;
+}
+.containerform {
+  max-width: 600px;
+  margin: 0 auto;
+}
