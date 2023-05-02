@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Site</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Blog Site</h1>
+		<form id="post-form">
+			<label for="author">Author:</label>
+			<input type="text" id="author" name="author" required>
+			<br>
+			<label for="date">Date:</label>
+			<input type="date" id="date" name="date" required>
+			<br>
+			<label for="tags">Tags:</label>
+			<input type="text" id="tags" name="tags">
+			<br>
+			<label for="content">Content:</label>
+			<textarea id="content" name="content" required></textarea>
+			<br>
+			<button type="submit" id="submit-btn">Add Post</button>
+			<button type="button" id="clear-btn">Clear Form</button>
+		</form>
+		<div id="post-list"></div>
+	</div>
+	<script src="script.js"></script>
+	<main>
+		<div class="post">
+		  <h2>Post Title 1</h2>
+		  <div class="post-meta">
+			Posted by John Doe on January 1, 2023 | Tags: <a href="#">Tag 1</a>, <a href="#">Tag 2</a>
+		  </div>
+		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
+		  <div class="post-tags">
+			<a href="#">Tag 1</a>
+			<a href="#">Tag 2</a>
+		  </div>
+		</div>
+		<div class="post">
+		  <h2>Post Title 2</h2>
+		  <div class="post-meta">
+			Posted by Jane Smith on January 2, 2023 | Tags: <a href="#">Tag 3</a>, <a href="#">Tag 4</a>
+		  </div>
+		  <p>Nulla vitae ex vel dolor molestie iaculis. Fusce vitae ipsum eu massa convallis tristique at id massa. Donec interdum enim id velit eleifend vestibulum. Suspendisse dictum velit non magna lacinia volutpat. Nulla vel malesuada urna. Fusce viverra, nisi vel fringilla fringilla, odio eros pulvin
+			<div class="post-tags">
+			<a href="#">Tag 1</a>
+			<a href="#">Tag 2</a>
+		  </div>
+		</div>
+		<div class="post">
+		  <h2>Post Title 3</h2>
+		  <div class="post-meta">
+			Posted by John Doe  on January 1, 2023  | Tags: <a href="#">Tag 1</a>, <a href="#">Tag 2</a>
+		  </div>
+		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
+		  <div class="post-tags">
+			<a href="#">Tag 1</a>
+			<a href="#">Tag 2</a>
+		  </div>
+		</div>
+		<div class="post">
+		  <h2>Post Title 4</h2>
+		  <div class="post-meta">
+			Posted by John Doe on January 1, 2023  | Tags: <a href="#">Tag 1</a>, <a href="#">Tag 2</a>
+		  </div>
+		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
+		  <div class="post-tags">
+			<a href="#">Tag 1</a>
+			<a href="#">Tag 2</a>
+		  </div>
+		</div>
+		<div class="post">
+		  <h2>Post Title 5</h2>
+		  <div class="post-meta">
+			Posted by John Doe on January 1, 2023  | Tags: <a href="#">Tag 1</a>, <a href="#">Tag 2</a>
+		  </div>
+		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
+		  <div class="post-tags">
+			<a href="#">Tag 1</a>
+			<a href="#">Tag 2</a>
+		  </div>
+		</div>
+</body>
+</html>
