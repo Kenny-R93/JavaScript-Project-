@@ -3,6 +3,8 @@ const form = document.querySelector("#post-form");
 const postList = document.querySelector("#post-list");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
+const editBtn = document.getElementById('#editBtn');
+const deleteBtn = document.getElementById('#deleteBtn');
 let posts = [];
 
 // Check if local storage has existing posts
@@ -11,10 +13,14 @@ if (localStorage.getItem("posts")) {
   displayPosts();
 }
 
+
 // Event listeners
 form.addEventListener("submit", addPost);
 postList.addEventListener("click", deletePost);
 searchForm.addEventListener("submit", searchPosts);
+deleteBtn.addEventListener("click", deletePost);
+
+
 
 // Functions
 function addPost(e) {
@@ -43,6 +49,7 @@ function addPost(e) {
   authorInput.value = "";
   tagsInput.value = "";
 
+  
   // Display the posts
   displayPosts();
 }

@@ -39,9 +39,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             </div>
             <div class="topnav" style="padding-left: 1rem; padding-right: 1rem;">
-                <input type="text" placeholder="Search..">
+                <input type="text" id="search-input" placeholder="Search..">
               </div>
-                <button class="btn btn-outline-light" type="submit">
+                <button class="btn btn-outline-light" id="search-btn" type="submit">
                   Search Blog
                 </button>            
             </div>
@@ -65,16 +65,16 @@
       <body>
      
         <br>
-        <!-- <main> -->
-            <!-- <div class="post">
+        <main>
+            <div class="post">
               <h2>Post Title 1</h2>
               <div class="post-meta">
                 Posted by John Doe on January 1, 2023 | Tags: <a href="#">Tag 1</a>, <a href="#">Tag 2</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
               <div class="post-tags">
-                <a href="#">Tag 1</a>
-                <a href="#">Tag 2</a>
+                <button type="button" class="edit-btn">Edit</button>
+				<button type="button" class="delete-btn">Delete</button>
               </div>
             </div>
             <div class="post">
@@ -120,7 +120,7 @@
                 <a href="#">Tag 1</a>
                 <a href="#">Tag 2</a>
               </div>
-            </div> -->
+            </div>
             <div class="containerform">
                 <h1>Blog Site</h1>
                 <form id="post-form">
@@ -134,14 +134,21 @@
                     <input type="text" id="tags" name="tags">
                     <br>
                     <label for="content">Content:</label>
-                    <textarea id="content" name="content" required></textarea>
-                    <br>
+                    <textarea id="content" name="content" required maxlength="200"></textarea>
+					<small class="text-muted">
+					<p>Max 200 characters long.</p>
+					<br>
                     <button type="submit" id="submit-btn">Add Post</button>
                     <button type="button" id="clear-btn">Clear Form</button>
                 </form>
                 <div id="post-list"></div>
             </div>
             
+			<ul id="post-list">
+				<!-- Posts will be dispalyed here -->
+			</ul>
+
+
       <!--FOOTER---------------------------------------------------->
 
       <footer class="py-3 my-4">
