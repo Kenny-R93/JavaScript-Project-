@@ -43,7 +43,7 @@
               </div>
                 <button class="btn btn-outline-light" id="search-btn" type="submit">
                   Search Blog
-                </button>            
+                </button>
             </div>
         </nav>
       </div>
@@ -62,14 +62,34 @@
       </div>
 
       <!---------------------- JOHN  ---------------------> 
-      <body>
-     
         <br>
         <main>
+          <div class="containerform">
+            <h1>Blog Site</h1>
+            <form id="post-form">
+      <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+                <br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" name="tags">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required maxlength="200"></textarea>
+      <small class="text-muted">
+      <p>Max 200 characters long.</p>
+      <br>
+                <button type="submit" id="submit-btn">Add Post</button>
+                <button type="button" id="clear-btn">Clear Form</button>
+            </form>
+            
+          </div>
             <div class="post">
               <h2>Post Title 1</h2>
               <div class="post-meta">
-                Posted by John Doe on January 1, 2023 | Tags: <a href="#">Tag 1</a>, <a href="#">Tag 2</a>
+                Posted by John Doe on January 1, 2023 | Tags: <a href="#">Tag1</a>, <a href="#">Tag2</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
               <div class="post-buttons">
@@ -80,40 +100,17 @@
             <div class="post">
               <h2>Post Title 2</h2>
               <div class="post-meta">
-                Posted by Jane Smith on January 2, 2023 | Tags: <a href="#">Tag 3</a>, <a href="#">Tag 4</a>
+                Posted by Jane Smith on January 2, 2023 | Tags: <a href="#">Tag3</a>, <a href="#">Tag4</a>
               </div>
-              <p>Nulla vitae ex vel dolor molestie iaculis. Fusce vitae ipsum eu massa convallis tristique at id massa. Donec interdum enim id velit eleifend vestibulum. Suspendisse dictum velit non magna lacinia volutpat. Nulla vel malesuada urna. Fusce viverra, nisi vel fringilla fringilla, odio eros pulvin
-<<<<<<< HEAD
+              <p>Nulla vitae ex vel dolor molestie iaculis. Fusce vitae ipsum eu massa convallis tristique at id massa. Donec interdum enim id velit eleifend vestibulum. Suspendisse dictum velit non magna lacinia volutpat. Nulla vel malesuada urna. Fusce viverra, nisi vel fringilla fringilla, odio eros pulvin</p>
+
                 <div class="post-buttons">
 					<button type="button" class="edit-btn">Edit</button>
 					<button type="button" class="delete-btn">Delete</button>
-=======
         
               </div>
             </div>
             <div id="post-list"></div>
-            <div class="containerform">
-                <h1>Blog Site</h1>
-                <form id="post-form">
-					<label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required>
-                    <label for="author">Author:</label>
-                    <input type="text" id="author" name="author" required>
-                    <br>
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
-                    <label for="tags">Tags:</label>
-                    <input type="text" id="tags" name="tags">
-                    <label for="content">Content:</label>
-                    <textarea id="content" name="content" required maxlength="200"></textarea>
-					<small class="text-muted">
-					<p>Max 200 characters long.</p>
-					<br>
-                    <button type="submit" id="submit-btn">Add Post</button>
-                    <button type="button" id="clear-btn">Clear Form</button>
-                </form>
-                
-            </div>
             
 			<!-- <ul id="post-list"> -->
 				<!-- Posts will be dispalyed here -->
