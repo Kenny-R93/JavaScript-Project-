@@ -1,120 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
-    <title>Family First Blog</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-   />
-    
-  </head>
-  <body>
-    <!--NAVIGATION BAR----------------------------->
-    <div class="container">
-      <div class="row">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid" style="background-color: rgb(77, 111, 137);">
-            <a style="font-size:xx-large; font-weight: bolder">Family First Blog </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </div>
-            <div class="topnav" style="padding-left: 1rem; padding-right: 1rem;">
-                <input type="text" id="search-input" placeholder="Search..">
-              </div>
-                <button class="btn btn-outline-light" id="search-btn" type="submit">
-                  Search Blog
-                </button>
-            </div>
-        </nav>
-      </div>
 
-      <!--HERO SECTION----------->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Family First Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-      <div class="row1">
-        <div class="px-4 py-5 my-5 text-center">
-          <h1 class="display-5 fw-bold color">Quote of the day</h1>
-          <div class="col-lg-6 mx-auto">
-            <p class="quote">
-                “The best way to predict the future is to invent it.” ― Alan Kay
-            </p>
+</head>
+
+<body>
+  <!--NAVIGATION BAR----------------------------->
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" style="background-color: rgb(77, 111, 137);">
+          <a style="font-size:xx-large; font-weight: bolder">Family First Blog </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
           </div>
+          <div class="topnav" style="padding-left: 1rem; padding-right: 1rem;">
+            <input type="text" id="search-input" placeholder="Search..">
+          </div>
+          <button class="btn btn-outline-light" id="search-btn" type="submit">
+            Search Blog
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!--HERO SECTION----------->
+
+    <div class="row1">
+      <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold color">Quote of the day</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="quote">
+            “The best way to predict the future is to invent it.” ― Alan Kay
+          </p>
         </div>
       </div>
+    </div>
 
-      <!---------------------- JOHN  ---------------------> 
-        <br>
-        <main>
-          <div class="containerform">
-            <h1>Blog Site</h1>
-            <form id="post-form">
-      <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author" required>
-                <br>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-                <label for="tags">Tags:</label>
-                <input type="text" id="tags" name="tags">
-                <label for="content">Content:</label>
-                <textarea id="content" name="content" required maxlength="400"></textarea>
-      <small class="text-muted">
-      <p>Max 400 characters long.</p>
-      <br>
-                <button type="submit" id="submit-btn">Add Post</button>
-                <button type="button" id="clear-btn">Clear Form</button>
-            </form>
-            
-          </div>
-            <div class="post">
-              <h2>Post Title 1</h2>
-              <div class="post-meta">
-                Posted by John Doe on January 1, 2023 | Tags: <a href="#">Tag1</a>, <a href="#">Tag2</a>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada, augue quis sollicitudin porttitor, sapien sapien maximus nisl, vel convallis ipsum erat ut magna. Proin id mi justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent egestas vitae quam ut dapibus. Duis a lacinia elit.</p>
-              <div class="post-buttons">
-                <button type="button" class="edit-btn">Edit</button>
-				<button type="button" class="delete-btn">Delete</button>
-              </div>
-            </div>
-            <div class="post">
-              <h2>Post Title 2</h2>
-              <div class="post-meta">
-                Posted by Jane Smith on January 2, 2023 | Tags: <a href="#">Tag3</a>, <a href="#">Tag4</a>
-              </div>
-              <p>Nulla vitae ex vel dolor molestie iaculis. Fusce vitae ipsum eu massa convallis tristique at id massa. Donec interdum enim id velit eleifend vestibulum. Suspendisse dictum velit non magna lacinia volutpat. Nulla vel malesuada urna. Fusce viverra, nisi vel fringilla fringilla, odio eros pulvin</p>
+    <!---------------------- JOHN  --------------------->
+    <br>
+    <main>
+      <div class="containerform">
+        <h1>Blog Site</h1>
+        <form id="post-form">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required>
+          <br>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+          <label for="tags">Tags:</label>
+          <input type="text" id="tags" name="tags">
+          <label for="content">Content:</label>
+          <textarea id="content" name="content" required maxlength="400"></textarea>
+          <small class="text-muted">
+            <p>Max 400 characters long.</p>
+            <br>
+            <button type="submit" id="submit-btn">Add Post</button>
+            <button type="button" id="clear-btn">Clear Form</button>
+        </form>
 
-                <div class="post-buttons">
-					<button type="button" class="edit-btn">Edit</button>
-					<button type="button" class="delete-btn">Delete</button>
-        
-              </div>
-            </div>
-            <div id="post-list"></div>
-            
-			<!-- <ul id="post-list"> -->
-				<!-- Posts will be dispalyed here -->
-			<!-- </ul> -->
+      </div>
+      <div class="post">
+        <h2>Beach Vacation</h2>
+        <div class="post-meta">
+          Posted by Jane Smith on Sun Jul 10, 2022 | Tags: <a href="#">Vacation</a>, <a href="#">Beach</a>
+        </div>
+        <p>A beach vacation is a perfect way to unwind and enjoy the natural beauty of the ocean. Whether you prefer
+          swimming,
+          surfing, sunbathing, or simply relaxing with a book, there's something for everyone at the beach. Consider
+          renting beach chairs,
+          umbrellas, or other equipment for added comfort. It is important to be mindful of safety rules and lifeguard
+          instructions, especially
+          if you're swimming or surfing. Additionally, respect the environment and the other people at the beach as
+          well. With warm sand, cool waves,
+          and breathtaking views, a beach vacation can provide a much-needed escape from everyday life. So, grab your
+          sunglasses and head to the nearest
+          beach for a memorable vacation experience.</p>
+
+        <div class="post-buttons">
+          <button type="button" class="edit-btn">Edit</button>
+          <button type="button" class="delete-btn">Delete</button>
+        </div>
+      </div>
+      <div class="post">
+        <h2>Go! Charlotte Hornets</h2>
+        <div class="post-meta">
+          Posted by John Doe on Fri March 31, 2023 | Tags: <a href="#">Basketball</a>, <a href="#">Charlotte</a>
+        </div>
+        <p>Going to a Charlotte Hornets game is an exciting experience for basketball fans. The Spectrum Center in
+          Charlotte is a fantastic venue that can accommodate large
+          crowds and has a lively atmosphere. Watching the players warm up, eating concession snacks and cheering with
+          the crowd make the experience memorable
+          even for non-basketball fans. Be sure to get there early if you plan on grabbing food or merchandise because
+          once the game starts, you won't want
+          to take your eyes off of the fast-paced action. Attending a Hornets game can be a great outing with friends or
+          family, and a perfect way to enjoy some
+          exciting basketball in Charlotte. So, why not check the schedule and plan your next trip to a Charlotte
+          Hornets game?</p>
+
+        <div class="post-buttons">
+          <button type="button" class="edit-btn">Edit</button>
+          <button type="button" class="delete-btn">Delete</button>
+
+        </div>
+      </div>
+      <div id="post-list"></div>
+
+      <!-- <ul id="post-list"> -->
+      <!-- Posts will be displayed here -->
+      <!-- </ul> -->
 
 
       <!--FOOTER---------------------------------------------------->
@@ -130,12 +139,11 @@
         </ul>
         <p class="text-center text-muted">© 2023 Family First Blog</p>
       </footer>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

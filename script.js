@@ -86,14 +86,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function deletePost(e) {
-    e.parentElement.parentElement.remove("id");
-  //   if (e.target.classList.contains("delete-button")) {
-  //     const postId = Number(e.target.dataset.id);
-  //     posts = posts.filter((post) => post.id !== postId);
-  //     localStorage.setItem("posts", JSON.stringify(posts));
-  //     displayPosts();
-  //   }
-  // }
+    if (e.target.classList.contains("delete-btn")) {
+      const postId = Number(e.target.dataset.id);
+      posts = posts.filter((post) => post.id !== postId);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      displayPosts();
+    }
   }
 
   // function searchPosts(e) {
