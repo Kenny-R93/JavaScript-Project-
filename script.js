@@ -1,4 +1,5 @@
 // Define variables
+//document.body.onload = displayPosts;
 const form = document.querySelector("#post-form");
 const postList = document.querySelector("#post-list");
 const searchForm = document.querySelector("#search-form");
@@ -25,17 +26,19 @@ deleteBtn.addEventListener("click", deletePost);
 // Functions
 function addPost(e) {
   e.preventDefault();
+  const titleInput = document.querySelector("#title")
   const contentInput = document.querySelector("#content");
   const authorInput = document.querySelector("#author");
   const tagsInput = document.querySelector("#tags");
 
   // Create a new post object
   const post = {
+    title: titleInput.value,
     id: Date.now(),
     content: contentInput.value,
     author: authorInput.value,
     tags: tagsInput.value.split(","),
-    date: new Date().toLocaleString(),
+    date: new Date().toDateString(),
   };
 
   // Add the post to the posts array
@@ -45,6 +48,7 @@ function addPost(e) {
   localStorage.setItem("posts", JSON.stringify(posts));
 
   // Clear the form inputs
+  titleInput.value = "";
   contentInput.value = "";
   authorInput.value = "";
   tagsInput.value = "";
@@ -62,13 +66,17 @@ function displayPosts() {
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
 
-    const postItem = document.createElement("li");
+    const postItem = document.createElement('div');
     postItem.innerHTML = `
-      <div>${post.content}</div>
-      <div>Author: ${post.author}</div>
-      <div>Date: ${post.date}</div>
-      <div>Tags: ${post.tags.join(", ")}</div>
-      <button class="delete-button" data-id="${post.id}">Delete</button>
+    <div class="post">
+      <h2>${post.title}</h2>
+      <div class="post-meta">Posted by ${post.author} on ${post.date} | Tags: <a href="#">${post.tags.join(", ")}</a></div>
+      <p>${post.content}</p>
+      <div class="post-buttons">
+      <button class="edit-btn" data-id="${post.id}">Edit</button>
+      <button class="delete-btn" data-id="${post.id}">Delete</button>
+      </div>
+    </div>
     `;
     postList.appendChild(postItem);
   }

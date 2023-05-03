@@ -67,9 +67,9 @@ button:hover {
   background-color: #2980b9;
 }
 
-#post-list {
+/* #post-list {
   margin-top: 20px;
-}
+} */
 
 .post {
   margin-bottom: 20px;
@@ -94,11 +94,11 @@ button:hover {
   text-decoration: none;
 }
 
-.post-tags {
+.post-buttons {
   margin-top: 10px;
 }
 
-.post-tags a {
+.post-buttons a {
   display: inline-block;
   padding: 5px 10px;
   margin-right: 10px;
@@ -110,7 +110,7 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-.post-tags a:hover {
+.post-buttons a:hover {
   background-color: #2980b9;
 }
 
