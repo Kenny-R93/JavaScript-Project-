@@ -117,12 +117,14 @@ button:hover {
 
 
 /* --------------------KL STYLE ADDED----------- */
-body {
-  background-image: url(images/BG.jpeg)
-}
+/* body {
+  background-image: url(images/BG.jpeg);
+  background-attachment: fixed;
+
+} */
 
 .row1 {
-  background-image: url(images/cover.jpg);
+  background-image: url(images/cover2.jpg);
   background-size: cover;
 }
 
@@ -136,9 +138,9 @@ body {
 }
 
 .quote {
-  color:aliceblue;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-bottom: 10px;
+  font-family: Arial, sans-serif;
 }
 
 input#search-input {
