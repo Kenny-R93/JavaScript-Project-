@@ -157,3 +157,8 @@ button#search-btn.btn.btn-outline-light {
   margin-bottom: 10px;
   font-family: Arial, sans-serif;
 }
+
+#content {
+  width: 100%;
+  height: auto;
+}
