@@ -14,12 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     displayPosts();
   }
 
-
   // Event listeners
   form.addEventListener("submit", addPost);
   postList.addEventListener("click", deletePost);
-  // searchForm.addEventListener("submit", searchPosts);
-  //deleteBtn.addEventListener("click", deletePost);
 
 
   // Functions
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     contentInput.value = "";
     authorInput.value = "";
     tagsInput.value = "";
-
 
     // Display the posts
     displayPosts();
@@ -95,7 +91,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   editButtons.forEach(button => {
     button.addEventListener('click', () => {
-     
+
       // get post content elements
       const post = button.parentNode.parentNode; // get parent node of button
       const postContent = post.querySelector('p'); // assuming post content is in a <p> element
@@ -152,10 +148,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         postContent.innerText = updatedContent;
         postTags.innerText = updatedTags;
 
-        // change save button back to edit button
-        // saveButton.innerText = 'Edit';
-        // saveButton.classList.remove('save-btn');
-        // saveButton.classList.add('edit-btn');
+
         button.innerText = 'Edit';
         button.classList.remove('save-btn');
         button.classList.add('edit-btn');
@@ -165,19 +158,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     });
   });
-
-
-  // function searchPosts(e) {
-  //   e.preventDefault();
-  //   const searchTerm = searchInput.value.toLowerCase();
-  //   const filteredPosts = posts.filter((post) => {
-  //     const content = post.content.toLowerCase();
-  //     const author = post.author.toLowerCase();
-  //     const tags = post.tags.join(" ").toLowerCase();
-  //     return content.includes(searchTerm) || author.includes(searchTerm) || tags.includes(searchTerm);
-  //   });
-  //   displayFilteredPosts(filteredPosts);
-  // }
 
   searchButton.addEventListener("click", () => {
     const searchTag = searchInput.value.toLowerCase();

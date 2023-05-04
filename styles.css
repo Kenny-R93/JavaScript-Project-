@@ -162,3 +162,19 @@ button#search-btn.btn.btn-outline-light {
   width: 100%;
   height: auto;
 }
+
+button.edit-btn {
+  border-radius: 5px;
+}
+
+button#clear-btn {
+  border-radius: 5px;
+}
+
+button.delete-btn {
+  border-radius: 5px;
+}
+
+button#submit-btn {
+  border-radius: 5px;
+}
