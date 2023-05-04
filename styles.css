@@ -142,3 +142,18 @@ button:hover {
   margin-bottom: 10px;
   font-family: Arial, sans-serif;
 }
+
+input#search-input {
+  margin: 10px 10px 10px;
+
+}
+
+button#search-btn.btn.btn-outline-light {
+  border-color: #000000;
+  border-width: 2px;
+}
+.quote {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
