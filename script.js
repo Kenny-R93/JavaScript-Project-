@@ -1,14 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
   // Define variables
-  //document.body.onload = displayPosts;
   const form = document.querySelector("#post-form");
   const postList = document.querySelector("#post-list");
-  const searchForm = document.querySelector("#search-form");
   const searchInput = document.querySelector("#search-input");
   const searchButton = document.getElementById("search-btn");
-  const editBtn = document.getElementById('#editBtn');
-  const deleteBtn = document.getElementById('#deleteBtn');
+
   let posts = [];
 
   // Check if local storage has existing posts
@@ -22,8 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   form.addEventListener("submit", addPost);
   postList.addEventListener("click", deletePost);
   // searchForm.addEventListener("submit", searchPosts);
-  // deleteBtn.addEventListener("click", deletePost);
-
+  //deleteBtn.addEventListener("click", deletePost);
 
 
   // Functions
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     authorInput.value = "";
     tagsInput.value = "";
 
-    
+
     // Display the posts
     displayPosts();
   }
@@ -76,8 +72,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <div class="post-meta">Posted by ${post.author} on ${post.date} | Tags: <a href="#">${post.tags.join(", ")}</a></div>
         <p>${post.content}</p>
         <div class="post-buttons">
-        <button class="edit-btn" data-id="${post.id}">Edit</button>
-        <button class="delete-btn" data-id="${post.id}">Delete</button>
+        <button type="button" class="edit-btn" data-id="${post.id}">Edit</button>
+        <button type="button" class="delete-btn" data-id="${post.id}">Delete</button>
         </div>
       </div>
       `;
@@ -86,15 +82,90 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function deletePost(e) {
-    e.parentElement.parentElement.remove("id");
-  //   if (e.target.classList.contains("delete-button")) {
-  //     const postId = Number(e.target.dataset.id);
-  //     posts = posts.filter((post) => post.id !== postId);
-  //     localStorage.setItem("posts", JSON.stringify(posts));
-  //     displayPosts();
-  //   }
-  // }
+    if (e.target.classList.contains("delete-btn")) {
+      const postId = Number(e.target.dataset.id);
+      posts = posts.filter((post) => post.id !== postId);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      displayPosts();
+    }
   }
+
+  // select all edit buttons
+  const editButtons = document.querySelectorAll('.edit-btn');
+
+  editButtons.forEach(button => {
+    button.addEventListener('click', () => {
+     
+      // get post content elements
+      const post = button.parentNode.parentNode; // get parent node of button
+      const postContent = post.querySelector('p'); // assuming post content is in a <p> element
+      const postTitle = post.querySelector('h2'); // assuming post title is in a <h2> element
+      const postTags = post.querySelector('.post-meta a'); // assuming post tags are in <a> elements with .post-meta class
+
+      // create form elements
+      const titleInput = document.createElement('input');
+      titleInput.type = 'text';
+      titleInput.id = 'title';
+      titleInput.name = 'title';
+      titleInput.value = postTitle.innerText;
+      titleInput.required = true;
+
+      const contentTextarea = document.createElement('textarea');
+      contentTextarea.id = 'content';
+      contentTextarea.name = 'content';
+      contentTextarea.value = postContent.innerText;
+      contentTextarea.required = true;
+      contentTextarea.maxLength = 400;
+
+      const tagsInput = document.createElement('input');
+      tagsInput.type = 'text';
+      tagsInput.id = 'tags';
+      tagsInput.name = 'tags';
+      tagsInput.value = postTags.innerText;
+      tagsInput.required = true;
+
+      // replace content elements with form elements
+      postTitle.replaceWith(titleInput);
+      postContent.replaceWith(contentTextarea);
+      postTags.replaceWith(tagsInput);
+
+      // change edit button to save button
+      button.innerText = 'Save';
+      button.classList.remove('edit-btn');
+      button.classList.add('save-btn');
+
+      // add save button functionality
+      const saveButton = post.querySelector('.save-btn');
+
+      saveButton.addEventListener('click', () => {
+        // get updated form values
+        const updatedTitle = titleInput.value;
+        const updatedContent = contentTextarea.value;
+        const updatedTags = tagsInput.value;
+
+        // replace form elements with content elements
+        titleInput.replaceWith(postTitle);
+        contentTextarea.replaceWith(postContent);
+        tagsInput.replaceWith(postTags);
+
+        postTitle.innerText = updatedTitle;
+        postContent.innerText = updatedContent;
+        postTags.innerText = updatedTags;
+
+        // change save button back to edit button
+        // saveButton.innerText = 'Edit';
+        // saveButton.classList.remove('save-btn');
+        // saveButton.classList.add('edit-btn');
+        button.innerText = 'Edit';
+        button.classList.remove('save-btn');
+        button.classList.add('edit-btn');
+
+        // remove save button event listener
+        saveButton.removeEventListener('click', () => { });
+      });
+    });
+  });
+
 
   // function searchPosts(e) {
   //   e.preventDefault();
@@ -113,13 +184,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const posts = document.querySelectorAll(".post");
 
     posts.forEach((post) => {
-        const tags = post.querySelector(".post-meta").textContent
-            .toLowerCase()
-            .split(/[, ]+/);
-            const isTagged = tags.includes(searchTag);
-            post.style.display = isTagged ? "" : "none";
-        });
+      const tags = post.querySelector(".post-meta").textContent
+        .toLowerCase()
+        .split(/[, ]+/);
+      const isTagged = tags.includes(searchTag);
+      post.style.display = isTagged ? "" : "none";
     });
+  });
 
 
   function displayFilteredPosts(filteredPosts) {
@@ -141,4 +212,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
       postList.appendChild(postItem);
     }
   }
-  });
+});
